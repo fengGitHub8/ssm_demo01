@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <script src="js/vue.js"></script>
+
+    <style type="text/css">
+        .active {
+            width: 100px;
+            height: 100px;
+            background: green;
+            border: solid;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <p>{{show()}}</p>
+        <p>{{detail()}}</p>
+        <p>msg:{{msg}}</p>
+        <p v-bind:class="{ active: isActive }"></p>
+    </div>
+
+    <script type="text/javascript">
+        <!--创建一个vue对象-->
+        var v = new Vue({
+            el: '#app',
+            data:{
+                msg: "success",
+                isActive: true
+            },
+            methods:{
+                show:function () {
+                    return "返回信息";
+                },
+                detail(){
+                    return "详细信息";
+                }
+            }
+        })
+    </script>
+</body>
+</html>
